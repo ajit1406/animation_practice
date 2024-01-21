@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:animation/controller/contr_pg.dart';
+import 'package:animation/lottie/lotie_ani.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
 
     Timer(Duration(seconds: 4), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => ControlPage()));
+          context, MaterialPageRoute(builder: (context) => LotieAniPage()));
     });
   }
 
@@ -35,7 +35,7 @@ class _SplashPageState extends State<SplashPage> {
               height: 11,
             ),
             Text(
-              "Explorer App",
+              "Welcome to Animation App",
               style: TextStyle(
                 fontSize: 34,
                 fontWeight: FontWeight.bold,

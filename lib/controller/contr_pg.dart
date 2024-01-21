@@ -37,8 +37,8 @@ class _ControlPageState extends State<ControlPage>
         child: Container(
           width: controller.value * 200,
           height: controller.value * 200,
-          color: Colors.orange,
-          child: Text("Hello welcome to "),
+          color: Colors.orange.shade300,
+          child: Text("Hello welcome to App "),
         ),
       ),
     );
