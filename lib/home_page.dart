@@ -34,37 +34,27 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Animation"),
+        title: const Text("Animation"),
       ),
       body: InkWell(
         onTap: () {
           /*mWidth = 200;
           mHeight = 200;
           mColor = mColor== Colors.primaries[Random().nextInt(Colors.primaries.length - 1)];
-          mBorderRadius = Random().nextInt(50).toDouble();*/
+          mBorderRadius = Random().nextInt(50).toDouble();
           mOpacity = mOpacity == 1 ? 0.5 : 1;
-          isFirstVisible = !isFirstVisible;
+          isFirstVisible = !isFirstVisible;*/
+          mAlignment = mAlignment == Alignment.bottomRight
+              ? Alignment.topLeft
+              : Alignment.bottomRight;
           setState(() {});
         },
         child: Center(
-            child: AnimatedCrossFade(
-                firstChild: Container(
-                  width: 200,
-                  height: 100,
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text("tab to reveal"),
-                  ),
-                ),
-                secondChild: SizedBox(
-                  width: 200,
-                  height: 100,
-                  child: Text("Ithr kya hai"),
-                ),
-                crossFadeState: isFirstVisible
-                    ? CrossFadeState.showFirst
-                    : CrossFadeState.showSecond,
-                duration: Duration(seconds: 2))),
+            child: AnimatedAlign(
+          alignment: mAlignment,
+          duration: const Duration(seconds: 2),
+          child: const Text("hello world"),
+        )),
       ),
     );
   }
@@ -88,3 +78,22 @@ class _HomePageState extends State<HomePage> {
 //             height: 200,
 //           ),
 //         )
+
+//AnimatedCrossFade(
+//                 firstChild: Container(
+//                   width: 200,
+//                   height: 100,
+//                   color: Colors.blue,
+//                   child: Center(
+//                     child: Text("tab to reveal"),
+//                   ),
+//                 ),
+//                 secondChild: SizedBox(
+//                   width: 200,
+//                   height: 100,
+//                   child: Text("Ithr kya hai"),
+//                 ),
+//                 crossFadeState: isFirstVisible
+//                     ? CrossFadeState.showFirst
+//                     : CrossFadeState.showSecond,
+//                 duration: Duration(seconds: 2))
